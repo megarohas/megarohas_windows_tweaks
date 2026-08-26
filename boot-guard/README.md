@@ -7,8 +7,10 @@
    версиями по `DriverProvider` + `DriverVersion`. Если флайт откатил драйвер
    на inbox-заглушку — переставляет родной из локальной распакованной копии
    (`pnputil /add-driver ... /install`), без перезагрузки.
-2. Каждую загрузку заново прожимает все твики питания из трёх соседних папок
-   (MSPower, selective suspend, ASPM, роуминг, LAN advanced properties).
+2. Каждую загрузку заново прожимает все твики питания из соседних папок
+   (MSPower, selective suspend, ASPM, роуминг, LAN advanced properties, а с v3 —
+   и max-power для всех USB-контроллеров/хабов, см.
+   [usb-maxpower](../usb-maxpower/)).
 
 Лог — `boot-guard.log` рядом со скриптом, ротация на 256 КБ.
 
@@ -20,7 +22,7 @@ instance ID устройств. Это опубликованный снапшо
 
 ## Файлы
 
-- `boot-guard.ps1` — сам сторож (v2: BT + WLAN + LAN).
+- `boot-guard.ps1` — сам сторож (v3: BT + WLAN + LAN + питание всех USB).
 - `register-task.ps1` — (пере)регистрация задачи планировщика + тестовый прогон.
 
 ## Почему проверка именно по DriverProvider, а не по ProblemCode

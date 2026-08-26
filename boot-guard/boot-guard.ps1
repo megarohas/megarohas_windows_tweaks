@@ -1,4 +1,5 @@
-# Boot guard v2: Realtek 8852BE (WiFi+BT) + RTL8111H (LAN) - drivers & power tweaks.
+# Boot guard v3: Realtek 8852BE (WiFi+BT) + RTL8111H (LAN) drivers & power tweaks,
+# plus max-power for ALL USB controllers/hubs (no power-down, no selective suspend).
 # Runs as SYSTEM at startup (scheduled task "Wireless-8852BE-MaxPerf").
 # Insider Dev flights roll drivers back to inbox stubs; this detects and fixes it.
 $ErrorActionPreference = 'Continue'
@@ -6,7 +7,7 @@ $root = 'S:\Claude\toolbox'
 $log  = "$root\wireless-drivers\boot-guard.log"
 if ((Test-Path $log) -and ((Get-Item $log).Length -gt 262144)) { Remove-Item $log -Force }
 function Log($m) { "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') $m" | Add-Content -Path $log -Encoding UTF8 }
-Log '--- boot-guard v2 start ---'
+Log '--- boot-guard v3 start ---'
 
 $btId  = 'USB\VID_13D3&PID_3570\00E04C000001'
 $wlId  = 'PCI\VEN_10EC&DEV_B852&SUBSYS_54701A3B&REV_00\6&970B1E8&0&0020020B'
@@ -52,6 +53,13 @@ Get-CimInstance -Namespace root/wmi -ClassName MSPower_DeviceEnable |
                   $_.InstanceName -like '*DEV_8168*') -and $_.Enable } |
   ForEach-Object { $_ | Set-CimInstance -Property @{Enable=$false}; Log "MSPower -> False: $($_.InstanceName)" }
 
+# --- 2b. USB: forbid power-down on ALL controllers/hubs/devices (v3) ---
+$usbIds = (Get-PnpDevice -PresentOnly -ErrorAction SilentlyContinue |
+           Where-Object { $_.Class -in 'USB','USBDevice' }).InstanceId
+Get-CimInstance -Namespace root/wmi -ClassName MSPower_DeviceEnable -ErrorAction SilentlyContinue |
+  Where-Object { $_.Enable -and (($_.InstanceName -replace '_\d+$','') -in $usbIds) } |
+  ForEach-Object { $_ | Set-CimInstance -Property @{Enable=$false}; Log "USB MSPower -> False: $($_.InstanceName)" }
+
 # --- 3. BT selective suspend off ---
 $btKey = "HKLM:\SYSTEM\CurrentControlSet\Enum\$btId\Device Parameters"
 if ((Get-ItemProperty $btKey -Name SelectiveSuspendEnabled -ErrorAction SilentlyContinue).SelectiveSuspendEnabled -ne 0) {
@@ -59,9 +67,11 @@ if ((Get-ItemProperty $btKey -Name SelectiveSuspendEnabled -ErrorAction Silently
     Log 'SelectiveSuspendEnabled -> 0'
 }
 
-# --- 4. Power scheme: USB suspend off, PCIe ASPM off ---
+# --- 4. Power scheme: USB suspend off, USB3 Link PM off, PCIe ASPM off ---
 powercfg /setacvalueindex SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0
 powercfg /setdcvalueindex SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0
+powercfg /setacvalueindex SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 d4e98f31-5ffe-4ce1-be31-1b38b384c009 0
+powercfg /setdcvalueindex SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 d4e98f31-5ffe-4ce1-be31-1b38b384c009 0
 powercfg /setacvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setdcvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setactive SCHEME_CURRENT
@@ -100,4 +110,4 @@ if ($btReinstalled) {
     pnputil /restart-device $btId | Out-Null
     Log "BT device restarted: $LASTEXITCODE"
 }
-Log '--- boot-guard v2 done ---'
+Log '--- boot-guard v3 done ---'
