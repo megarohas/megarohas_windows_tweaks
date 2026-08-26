@@ -101,7 +101,7 @@
                                             "IsHidden":  false,
                                             "Enable":  true,
                                             "SelectedFanCurve":  {
-                                                                     "Name":  "Case (GPU)"
+                                                                     "Name":  "Case max"
                                                                  },
                                             "SelectedOffset":  0,
                                             "PairedFanSensor":  {
@@ -169,7 +169,7 @@
                                             "IsHidden":  false,
                                             "Enable":  true,
                                             "SelectedFanCurve":  {
-                                                                     "Name":  "Case (GPU)"
+                                                                     "Name":  "Case max"
                                                                  },
                                             "SelectedOffset":  0,
                                             "PairedFanSensor":  {
@@ -511,6 +511,47 @@
                                                                       "HysteresisValueDown":  3,
                                                                       "IgnoreHysteresisAtLimits":  true
                                                                   }
+                                         },
+                                         {
+                                             "Name":  "Case (CPU)",
+                                             "IsHidden":  false,
+                                             "CommandMode":  0,
+                                             "SelectedTempSource":  {
+                                                                        "Identifier":  "/amdcpu/0/temperature/2"
+                                                                    },
+                                             "Points":  [
+                                                            "20,28",
+                                                            "62,28",
+                                                            "68,35",
+                                                            "75,45",
+                                                            "82,60",
+                                                            "90,80",
+                                                            "95,100"
+                                                        ],
+                                             "MinimumTemperature":  20,
+                                             "MaximumTemperature":  100,
+                                             "MaximumCommand":  100,
+                                             "HysteresisConfig":  {
+                                                                      "HysteresisValueUp":  2,
+                                                                      "HysteresisValueDown":  4,
+                                                                      "IgnoreHysteresisAtLimits":  true,
+                                                                      "ResponseTimeUp":  8,
+                                                                      "ResponseTimeDown":  15
+                                                                  }
+                                         },
+                                         {
+                                             "Name":  "Case max",
+                                             "IsHidden":  false,
+                                             "CommandMode":  0,
+                                             "SelectedFanCurves":  [
+                                                                       {
+                                                                           "Name":  "Case (GPU)"
+                                                                       },
+                                                                       {
+                                                                           "Name":  "Case (CPU)"
+                                                                       }
+                                                                   ],
+                                             "SelectedMixFunction":  0
                                          }
                                      ],
                        "FanSensors":  [
