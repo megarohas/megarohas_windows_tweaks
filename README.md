@@ -29,6 +29,7 @@ Dev-канал Insider при каждом флайте пересобирает
 | [`stayawake/`](stayawake/) | «Не спать»: мини-окно — пока открыто, ПК не уходит в сон и экран не гаснет |
 | [`debloat-win11-insider/`](debloat-win11-insider/) | Чистка дефолтного балласта: UWP-мусор, телеметрия-задачи, реклама, лишние автостарты — без вреда для Insider-флайтов |
 | [`system-perf/`](system-perf/) | Системные перф-твики: Game Bar DVR off, HAGS on, Fast Startup off, Power Throttling off |
+| [`bios-b450m-mortar-max/`](bios-b450m-mortar-max/) | BIOS-гайд: обновление до v2O (фикс fTPM-статтера), включение Resizable BAR и PBO, чек-лист после прошивки |
 
 Папки твиков самодостаточны: README с объяснением «что и почему» +
 идемпотентный скрипт `apply-*-tweaks.ps1` (запускать от администратора).
