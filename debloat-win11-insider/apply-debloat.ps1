@@ -31,9 +31,12 @@ $apps = @(
   # OneDrive store shim (the win32 client is uninstalled in [2/7])
   'Microsoft.OneDriveSync'
 )
-# NOTE: on fresh Insider builds this can fail with "access denied" even elevated;
-# deprovisioning is then skipped and a flight may bring apps back - just re-run.
-$prov = Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue
+# NOTE: on fresh Insider builds this can intermittently fail with "access denied"
+# even elevated; deprovisioning is then skipped and a flight may bring apps back -
+# just re-run. Contained in try/catch: an enclosing try/catch in a caller would
+# otherwise turn this statement-terminating COMException into a full script abort.
+try { $prov = Get-AppxProvisionedPackage -Online -ErrorAction Stop }
+catch { $prov = @(); "provisioned enum unavailable: $($_.Exception.Message)" }
 foreach ($a in $apps) {
     $p = Get-AppxPackage -AllUsers -Name $a -ErrorAction SilentlyContinue
     if ($p) {
