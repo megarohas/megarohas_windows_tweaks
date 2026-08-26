@@ -1,0 +1,609 @@
+﻿{
+    "__VERSION__":  "275",
+    "FanControl":  {
+                       "Controls":  [
+                                        {
+                                            "NickName":  "Fan #1",
+                                            "Identifier":  "/lpc/nct6797d/control/0",
+                                            "IsHidden":  true,
+                                            "Enable":  false,
+                                            "SelectedFanCurve":  null,
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  null,
+                                            "SelectedStart":  0,
+                                            "SelectedStop":  0,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  8,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Fan #2",
+                                            "Identifier":  "/lpc/nct6797d/control/1",
+                                            "IsHidden":  false,
+                                            "Enable":  true,
+                                            "SelectedFanCurve":  {
+                                                                     "Name":  "CPU quiet"
+                                                                 },
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  {
+                                                                    "Identifier":  "/lpc/nct6797d/fan/1"
+                                                                },
+                                            "SelectedStart":  0,
+                                            "SelectedStop":  0,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  3,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+                                                                [
+                                                                    1,
+                                                                    735,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    10,
+                                                                    751,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    30,
+                                                                    753,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    40,
+                                                                    840,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    50,
+                                                                    966,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    60,
+                                                                    1100,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    70,
+                                                                    1173,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    80,
+                                                                    1288,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    90,
+                                                                    1349,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    100,
+                                                                    1488,
+                                                                    false
+                                                                ]
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Fan #3",
+                                            "Identifier":  "/lpc/nct6797d/control/2",
+                                            "IsHidden":  false,
+                                            "Enable":  true,
+                                            "SelectedFanCurve":  {
+                                                                     "Name":  "Case (GPU)"
+                                                                 },
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  {
+                                                                    "Identifier":  "/lpc/nct6797d/fan/2"
+                                                                },
+                                            "SelectedStart":  35,
+                                            "SelectedStop":  26,
+                                            "MinimumPercent":  28,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  3,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+                                                                [
+                                                                    20,
+                                                                    0,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    30,
+                                                                    728,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    40,
+                                                                    902,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    50,
+                                                                    1040,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    60,
+                                                                    1164,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    70,
+                                                                    1279,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    80,
+                                                                    1369,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    90,
+                                                                    1486,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    100,
+                                                                    1531,
+                                                                    false
+                                                                ]
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Fan #4",
+                                            "Identifier":  "/lpc/nct6797d/control/3",
+                                            "IsHidden":  false,
+                                            "Enable":  true,
+                                            "SelectedFanCurve":  {
+                                                                     "Name":  "Case (GPU)"
+                                                                 },
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  {
+                                                                    "Identifier":  "/lpc/nct6797d/fan/3"
+                                                                },
+                                            "SelectedStart":  35,
+                                            "SelectedStop":  26,
+                                            "MinimumPercent":  28,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  3,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+                                                                [
+                                                                    20,
+                                                                    0,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    30,
+                                                                    619,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    40,
+                                                                    766,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    50,
+                                                                    887,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    60,
+                                                                    993,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    70,
+                                                                    1087,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    80,
+                                                                    1179,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    90,
+                                                                    1271,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    100,
+                                                                    1301,
+                                                                    false
+                                                                ]
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Fan #5",
+                                            "Identifier":  "/lpc/nct6797d/control/4",
+                                            "IsHidden":  true,
+                                            "Enable":  false,
+                                            "SelectedFanCurve":  null,
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  null,
+                                            "SelectedStart":  0,
+                                            "SelectedStop":  0,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  8,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Fan #6",
+                                            "Identifier":  "/lpc/nct6797d/control/5",
+                                            "IsHidden":  true,
+                                            "Enable":  false,
+                                            "SelectedFanCurve":  null,
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  null,
+                                            "SelectedStart":  0,
+                                            "SelectedStop":  0,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  8,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Fan #7",
+                                            "Identifier":  "/lpc/nct6797d/control/6",
+                                            "IsHidden":  true,
+                                            "Enable":  false,
+                                            "SelectedFanCurve":  null,
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  null,
+                                            "SelectedStart":  0,
+                                            "SelectedStop":  0,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  8,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Control 1 - NVIDIA GeForce RTX 3060",
+                                            "Identifier":  "NVApiWrapper/0-GA106-A/control/0",
+                                            "IsHidden":  false,
+                                            "Enable":  false,
+                                            "SelectedFanCurve":  null,
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  {
+                                                                    "Identifier":  "NVApiWrapper/0-GA106-A/fan/0"
+                                                                },
+                                            "SelectedStart":  9,
+                                            "SelectedStop":  6,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  8,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+                                                                [
+                                                                    0,
+                                                                    0,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    1,
+                                                                    1297,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    10,
+                                                                    1299,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    20,
+                                                                    1299,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    30,
+                                                                    1303,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    40,
+                                                                    1568,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    50,
+                                                                    1824,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    60,
+                                                                    2080,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    70,
+                                                                    2339,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    80,
+                                                                    2604,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    90,
+                                                                    2844,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    100,
+                                                                    3095,
+                                                                    false
+                                                                ]
+                                                            ]
+                                        },
+                                        {
+                                            "NickName":  "Control 2 - NVIDIA GeForce RTX 3060",
+                                            "Identifier":  "NVApiWrapper/0-GA106-A/control/1",
+                                            "IsHidden":  false,
+                                            "Enable":  false,
+                                            "SelectedFanCurve":  null,
+                                            "SelectedOffset":  0,
+                                            "PairedFanSensor":  {
+                                                                    "Identifier":  "NVApiWrapper/0-GA106-A/fan/1"
+                                                                },
+                                            "SelectedStart":  9,
+                                            "SelectedStop":  6,
+                                            "MinimumPercent":  0,
+                                            "SelectedCommandStepUp":  8,
+                                            "SelectedCommandStepDown":  8,
+                                            "ManualControlValue":  50,
+                                            "ManualControl":  false,
+                                            "ForceApply":  false,
+                                            "Calibration":  [
+                                                                [
+                                                                    0,
+                                                                    0,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    1,
+                                                                    1300,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    10,
+                                                                    1300,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    20,
+                                                                    1301,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    30,
+                                                                    1308,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    40,
+                                                                    1567,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    50,
+                                                                    1838,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    60,
+                                                                    2088,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    70,
+                                                                    2348,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    80,
+                                                                    2609,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    90,
+                                                                    2862,
+                                                                    false
+                                                                ],
+                                                                [
+                                                                    100,
+                                                                    3082,
+                                                                    false
+                                                                ]
+                                                            ]
+                                        }
+                                    ],
+                       "CustomSensors":  [
+
+                                         ],
+                       "FanCurves":  [
+                                         {
+                                             "Name":  "CPU quiet",
+                                             "IsHidden":  false,
+                                             "CommandMode":  0,
+                                             "SelectedTempSource":  {
+                                                                        "Identifier":  "/amdcpu/0/temperature/2"
+                                                                    },
+                                             "Points":  [
+                                                            "30,12",
+                                                            "45,18",
+                                                            "55,28",
+                                                            "65,40",
+                                                            "75,60",
+                                                            "82,85",
+                                                            "90,100"
+                                                        ],
+                                             "MaximumTemperature":  100,
+                                             "MinimumTemperature":  20,
+                                             "MaximumCommand":  100,
+                                             "HysteresisConfig":  {
+                                                                      "ResponseTimeUp":  5,
+                                                                      "ResponseTimeDown":  10,
+                                                                      "HysteresisValueUp":  1,
+                                                                      "HysteresisValueDown":  4,
+                                                                      "IgnoreHysteresisAtLimits":  true
+                                                                  }
+                                         },
+                                         {
+                                             "Name":  "Case (GPU)",
+                                             "IsHidden":  false,
+                                             "CommandMode":  0,
+                                             "SelectedTempSource":  {
+                                                                        "Identifier":  "NVApiWrapper/0-GA106-A/sensor/0"
+                                                                    },
+                                             "Points":  [
+                                                            "20,28",
+                                                            "57,28",
+                                                            "62,32",
+                                                            "70,45",
+                                                            "78,58",
+                                                            "85,75",
+                                                            "92,100"
+                                                        ],
+                                             "MaximumTemperature":  100,
+                                             "MinimumTemperature":  20,
+                                             "MaximumCommand":  100,
+                                             "HysteresisConfig":  {
+                                                                      "ResponseTimeUp":  3,
+                                                                      "ResponseTimeDown":  10,
+                                                                      "HysteresisValueUp":  1,
+                                                                      "HysteresisValueDown":  3,
+                                                                      "IgnoreHysteresisAtLimits":  true
+                                                                  }
+                                         }
+                                     ],
+                       "FanSensors":  [
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/0",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #1"
+                                          },
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/1",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #2"
+                                          },
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/2",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #3"
+                                          },
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/3",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #4"
+                                          },
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/4",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #5"
+                                          },
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/5",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #6"
+                                          },
+                                          {
+                                              "Identifier":  "/lpc/nct6797d/fan/6",
+                                              "IsHidden":  false,
+                                              "NickName":  "Fan #7"
+                                          },
+                                          {
+                                              "Identifier":  "NVApiWrapper/0-GA106-A/fan/0",
+                                              "IsHidden":  false,
+                                              "NickName":  "Control 1 - NVIDIA GeForce RTX 3060"
+                                          },
+                                          {
+                                              "Identifier":  "NVApiWrapper/0-GA106-A/fan/1",
+                                              "IsHidden":  false,
+                                              "NickName":  "Control 2 - NVIDIA GeForce RTX 3060"
+                                          }
+                                      ],
+                       "TemperatureSensors":  [
+
+                                              ]
+                   },
+    "Sensors":  {
+                    "AdlxWrapperSettings":  {
+                                                "Enabled":  true
+                                            },
+                    "DisabledPlugins":  [
+
+                                        ],
+                    "DisableStorageSensors":  false,
+                    "LibreHardwareMonitorSettings":  {
+                                                         "Controller":  true,
+                                                         "CPU":  true,
+                                                         "EmbeddedEC":  true,
+                                                         "GPU":  true,
+                                                         "Memory":  true,
+                                                         "Motherboard":  true,
+                                                         "PowerMonitor":  true,
+                                                         "PSU":  true,
+                                                         "Storage":  true,
+                                                         "StorageUpdateInterval":  "00:01:00",
+                                                         "ZeroRPMOverride":  true
+                                                     },
+                    "NvAPIWrapperSettings":  {
+                                                 "Enabled":  true,
+                                                 "ZeroRPMOverride":  true
+                                             }
+                },
+    "MainWindow":  {
+                       "Fahrenheit":  false,
+                       "HideCalibration":  false,
+                       "HideFanSpeedCards":  true,
+                       "HorizontalUIOrientation":  false,
+                       "PrimaryColor":  "#FF607D8B",
+                       "SecondaryColor":  "#FFAEEA00",
+                       "SelectedTheme":  "",
+                       "ShowHiddenCards":  false,
+                       "SyncThemeWithWindows":  true,
+                       "SyncTrayIconColorWithWindows":  true,
+                       "TrayIconColor":  null,
+                       "TrayIcons":  [
+
+                                     ]
+                   }
+}
