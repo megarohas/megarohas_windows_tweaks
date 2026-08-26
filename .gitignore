@@ -1,0 +1,8 @@
+# runtime artifacts from the working copy
+*.log
+*-log.txt
+
+# driver binaries (MS Update Catalog CABs + extracted INF packages)
+# documented in the per-folder READMEs, not committed
+*.cab
+ext/
