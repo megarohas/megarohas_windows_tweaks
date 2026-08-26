@@ -32,6 +32,7 @@ Dev-канал Insider при каждом флайте пересобирает
 | [`bios-b450m-mortar-max/`](bios-b450m-mortar-max/) | BIOS-гайд: обновление до v2O (фикс fTPM-статтера), включение Resizable BAR и PBO, чек-лист после прошивки |
 | [`fancontrol-quiet-fans/`](fancontrol-quiet-fans/) | Тихий профиль вентиляторов: кривые FanControl с гистерезисом (CPU от Tctl, корпусные от GPU), автозапуск, снапшот конфига |
 | [`usb-maxpower/`](usb-maxpower/) | Максимум питания USB: запрет power-down для всех контроллеров/хабов, selective suspend и USB3 LPM — off |
+| [`tweaks-reassert/`](tweaks-reassert/) | Сторож-обёртка: перепрожимает system-perf и деблоат при каждом входе + карта «кто что сторожит» |
 
 Папки твиков самодостаточны: README с объяснением «что и почему» +
 идемпотентный скрипт `apply-*-tweaks.ps1` (запускать от администратора).
