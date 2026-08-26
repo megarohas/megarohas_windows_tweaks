@@ -23,5 +23,5 @@ Realtek RTL8852BE Wi-Fi 6 (PCIe, `VEN_10EC&DEV_B852`). Из коробки: пр
 роуминга переименован из `RegROAMSensitiveLevel` в `RegRoamLevel` — скрипт
 ищет по-новому.
 
-На моей машине откат драйвера после Insider-флайтов автоматически чинит
+Откат драйвера после Insider-флайтов автоматически чинит
 [boot-guard](../boot-guard/).
