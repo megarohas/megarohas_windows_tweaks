@@ -34,6 +34,7 @@ Dev-канал Insider при каждом флайте пересобирает
 | [`usb-maxpower/`](usb-maxpower/) | Максимум питания USB: запрет power-down для всех контроллеров/хабов, selective suspend и USB3 LPM — off |
 | [`tweaks-reassert/`](tweaks-reassert/) | Сторож-обёртка: перепрожимает system-perf, vpn-dns-doctor и деблоат при каждом входе + карта «кто что сторожит» |
 | [`vpn-dns-doctor/`](vpn-dns-doctor/) | Чистка хвостов VPN-клиентов: осиротевшие маршруты, залипший DNS, NRPT — лечит «без VPN ничего не грузится» |
+| [`display-fxaa-artifacts/`](display-fxaa-artifacts/) | Разгадка «пережатых» приложений: глобальный FXAA NVIDIA мылит Electron/Flutter, а браузеры маскируют проблему |
 
 Папки твиков самодостаточны: README с объяснением «что и почему» +
 идемпотентный скрипт `apply-*-tweaks.ps1` (запускать от администратора).
