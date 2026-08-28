@@ -11,7 +11,7 @@ inbox-заглушки, advanced-настройки адаптеров — на 
 | Твики | Сторож |
 |---|---|
 | Драйверы BT/WLAN/LAN + их питание, [usb-maxpower](../usb-maxpower/), схема питания (suspend/LPM/ASPM) | [boot-guard](../boot-guard/) — SYSTEM-задача при старте +25 с |
-| [system-perf](../system-perf/) + [debloat-win11-insider](../debloat-win11-insider/) | задача **Tweaks-Reassert** (эта папка) — при входе +45 с |
+| [system-perf](../system-perf/) + [vpn-dns-doctor](../vpn-dns-doctor/) + [debloat-win11-insider](../debloat-win11-insider/) | задача **Tweaks-Reassert** (эта папка) — при входе +45 с |
 | Кривые вентиляторов ([fancontrol-quiet-fans](../fancontrol-quiet-fans/)) | задача FanControl при входе |
 | Андервольт GPU | задача MSI Afterburner при входе (`/s`, применяет свой Startup-профиль) |
 | ReBAR / XMP / PBO ([bios-b450m-mortar-max](../bios-b450m-mortar-max/)) | NVRAM BIOS — Windows не перетирает в принципе |
@@ -19,9 +19,9 @@ inbox-заглушки, advanced-настройки адаптеров — на 
 ## Как устроено
 
 - `reassert-at-logon.ps1` — обёртка: последовательно запускает идемпотентные
-  apply-скрипты (system-perf, затем debloat), пишет лог с ротацией рядом с
-  собой. Пути внутри — локальные для конкретной машины, поправьте под свою
-  раскладку.
+  apply-скрипты (system-perf, vpn-dns-doctor, затем debloat), пишет лог с
+  ротацией рядом с собой. Пути внутри — локальные для конкретной машины,
+  поправьте под свою раскладку.
 - `register-task.ps1` — регистрация задачи: при входе пользователя, задержка
   45 с (не мешать загрузке), наивысшие права, скрытое окно, повторные запуски
   игнорируются, лимит 20 минут.
