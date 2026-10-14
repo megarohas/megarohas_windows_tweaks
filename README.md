@@ -1,58 +1,61 @@
 # megarohas_windows_tweaks
 
-Твики Windows 11 для ПК на MSI B450M MORTAR MAX (MS-7B89) под Windows 11
-Insider **Dev channel**. Заточено под конкретную конфигурацию, но железо
-распространённое (Realtek RTL8852BE Wi-Fi/BT + Realtek RTL8111H GbE), так что
-может пригодиться и вам.
+**English** | [Русский](README.ru.md)
 
-## Предыстория
+Windows 11 tweaks for a PC on an MSI B450M MORTAR MAX (MS-7B89) running Windows 11
+Insider **Dev channel**. Tailored to this specific configuration, but the hardware
+is common (Realtek RTL8852BE Wi-Fi/BT + Realtek RTL8111H GbE), so it may come in
+handy for you too.
 
-Dev-канал Insider при каждом флайте пересобирает стек драйверов и умеет
-откатывать OEM-драйверы на inbox-заглушки Microsoft. 23.08.2026 так «умер»
-проводной интернет: заглушка `rtcx21x64.sys` встала без единой ошибки
-(ProblemCode 0, Status OK, в диспетчере всё зелёное) — но не поднимала PHY:
-ни линка, ни лампочек на порту. Windows Update ничего не предлагал, потому что
-считал устройство исправным.
+## Background
 
-Из этого выросло всё остальное: правильные драйверы, твики питания для всех
-трёх сетевых устройств и сторож, который после каждого флайта чинит систему
-автоматически.
+With every flight, the Insider Dev channel rebuilds the driver stack and may roll
+OEM drivers back to Microsoft's inbox stubs. That's how wired internet "died" on
+August 23, 2026: the `rtcx21x64.sys` stub installed without a single error
+(ProblemCode 0, Status OK, everything green in Device Manager) — but it never
+brought up the PHY: no link, no port LEDs. Windows Update offered nothing, because
+it considered the device healthy.
 
-## Состав
+Everything else grew out of that: the right drivers, power tweaks for all three
+network devices, and a watchdog that automatically fixes the system after every
+flight.
 
-| Папка | Что внутри |
+## Contents
+
+| Folder | What's inside |
 |---|---|
-| [`bluetooth-rtl8852be-maxperf/`](bluetooth-rtl8852be-maxperf/) | BT: запрет power-down и USB selective suspend — лечит заикания звука и отвалы геймпада |
-| [`wifi-rtl8852be-maxperf/`](wifi-rtl8852be-maxperf/) | Wi-Fi: MSPower off, PCIe ASPM off, роуминг на минимум — против просадок пинга и скачков между точками |
-| [`lan-rtl8111h-maxperf/`](lan-rtl8111h-maxperf/) | LAN: EEE / Green Ethernet / GigaLite / Interrupt Moderation — Выкл (GigaLite тихо резал гигабит до ~500 Мбит!) |
-| [`boot-guard/`](boot-guard/) | Сторож: задача планировщика, которая на каждой загрузке проверяет все три устройства, переставляет откатившиеся драйверы и заново прожимает твики |
-| [`stayawake/`](stayawake/) | «Не спать»: мини-окно — пока открыто, ПК не уходит в сон и экран не гаснет |
-| [`debloat-win11-insider/`](debloat-win11-insider/) | Чистка дефолтного балласта: UWP-мусор, телеметрия-задачи, реклама, лишние автостарты — без вреда для Insider-флайтов |
-| [`system-perf/`](system-perf/) | Системные перф-твики: Game Bar DVR off, HAGS on, Fast Startup off, Power Throttling off |
-| [`bios-b450m-mortar-max/`](bios-b450m-mortar-max/) | BIOS-гайд: обновление до v2O (фикс fTPM-статтера), включение Resizable BAR и PBO, чек-лист после прошивки |
-| [`fancontrol-quiet-fans/`](fancontrol-quiet-fans/) | Тихий профиль вентиляторов: кривые FanControl с гистерезисом (CPU от Tctl, корпусные от GPU), автозапуск, снапшот конфига |
-| [`usb-maxpower/`](usb-maxpower/) | Максимум питания USB: запрет power-down для всех контроллеров/хабов, selective suspend и USB3 LPM — off |
-| [`tweaks-reassert/`](tweaks-reassert/) | Сторож-обёртка: перепрожимает system-perf, vpn-dns-doctor и деблоат при каждом входе + карта «кто что сторожит» |
-| [`vpn-dns-doctor/`](vpn-dns-doctor/) | Чистка хвостов VPN-клиентов: осиротевшие маршруты, залипший DNS, NRPT — лечит «без VPN ничего не грузится» |
-| [`display-fxaa-artifacts/`](display-fxaa-artifacts/) | Разгадка «пережатых» приложений: глобальный FXAA NVIDIA мылит Electron/Flutter, а браузеры маскируют проблему |
+| [`bluetooth-rtl8852be-maxperf/`](bluetooth-rtl8852be-maxperf/) | BT: disables power-down and USB selective suspend — cures audio stutter and gamepad dropouts |
+| [`wifi-rtl8852be-maxperf/`](wifi-rtl8852be-maxperf/) | Wi-Fi: MSPower off, PCIe ASPM off, roaming at minimum — against ping spikes and hopping between access points |
+| [`lan-rtl8111h-maxperf/`](lan-rtl8111h-maxperf/) | LAN: EEE / Green Ethernet / GigaLite / Interrupt Moderation — Off (GigaLite was silently capping gigabit at ~500 Mbps!) |
+| [`boot-guard/`](boot-guard/) | Watchdog: a scheduled task that checks all three devices on every boot, reinstalls rolled-back drivers and re-applies the tweaks |
+| [`stayawake/`](stayawake/) | «Не спать» ("Don't sleep"): a tiny window — while it's open, the PC won't go to sleep and the screen won't turn off |
+| [`debloat-win11-insider/`](debloat-win11-insider/) | Clears out default dead weight: UWP junk, telemetry tasks, ads, unnecessary autostarts — without breaking Insider flights |
+| [`system-perf/`](system-perf/) | System perf tweaks: Game Bar DVR off, HAGS on, Fast Startup off, Power Throttling off |
+| [`bios-b450m-mortar-max/`](bios-b450m-mortar-max/) | BIOS guide: updating to v2O (fixes fTPM stutter), enabling Resizable BAR and PBO, a post-flash checklist |
+| [`fancontrol-quiet-fans/`](fancontrol-quiet-fans/) | Quiet fan profile: FanControl curves with hysteresis (CPU driven by Tctl, case fans by the GPU), autostart, config snapshot |
+| [`usb-maxpower/`](usb-maxpower/) | Maximum USB power: power-down disabled for all controllers/hubs, selective suspend and USB3 LPM — off |
+| [`tweaks-reassert/`](tweaks-reassert/) | Wrapper watchdog: re-applies system-perf, vpn-dns-doctor and the debloat at every logon + a map of "who guards what" |
+| [`vpn-dns-doctor/`](vpn-dns-doctor/) | Cleans up after VPN clients: orphaned routes, stuck DNS, NRPT — cures "nothing loads without the VPN" |
+| [`display-fxaa-artifacts/`](display-fxaa-artifacts/) | The "over-compressed apps" mystery solved: NVIDIA's global FXAA blurs Electron/Flutter apps, while browsers mask the problem |
 
-Папки твиков самодостаточны: README с объяснением «что и почему» +
-идемпотентный скрипт `apply-*-tweaks.ps1` (запускать от администратора).
+Tweak folders are self-contained: a README explaining the what and why + an
+idempotent `apply-*-tweaks.ps1` script (run it as administrator). (The per-folder
+READMEs are in Russian.)
 
-Всё разом — **`apply-all.ps1`** в корне (от администратора): прогоняет все
-запускаемые паки в разумном порядке, любой можно исключить —
-`.\apply-all.ps1 -Skip debloat,lan`. Гайды и установочные папки
-(bios, stayawake, fancontrol, boot-guard, tweaks-reassert) он сознательно
-не трогает — там свои шаги, см. их README.
+To run everything at once, use **`apply-all.ps1`** in the repo root (as administrator):
+it runs all the runnable packs in a sensible order, and any of them can be skipped —
+`.\apply-all.ps1 -Skip debloat,lan`. Guides and install-style folders
+(bios, stayawake, fancontrol, boot-guard, tweaks-reassert) are deliberately left
+out — they have their own steps, see their READMEs.
 
-## Драйверы
+## Drivers
 
-Бинарники драйверов (CAB'ы из Microsoft Update Catalog) в репозиторий не
-коммитятся — точные версии и где их взять описаны в README соответствующих
-папок.
+Driver binaries (CABs from the Microsoft Update Catalog) are not committed to the
+repo — the exact versions and where to get them are described in the READMEs of the
+corresponding folders.
 
 ---
-*Скрипты привязаны к конкретному железу и локальным путям — перед использованием
-на другой машине поправьте пути, instance ID устройств и эталонные версии
-(детали — в README соответствующих папок). Репозиторий пополняется по мере
-появления новых твиков.*
+*The scripts are tied to specific hardware and local paths — before using them on
+another machine, adjust the paths, device instance IDs and reference versions
+(details are in the corresponding folders' READMEs). The repo grows as new tweaks
+come along.*
