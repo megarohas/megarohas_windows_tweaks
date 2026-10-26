@@ -37,6 +37,7 @@ Dev-канал Insider при каждом флайте пересобирает
 | [`tweaks-reassert/`](tweaks-reassert/) | Сторож-обёртка: перепрожимает system-perf, vpn-dns-doctor и деблоат при каждом входе + карта «кто что сторожит» |
 | [`vpn-dns-doctor/`](vpn-dns-doctor/) | Чистка хвостов VPN-клиентов: осиротевшие маршруты, залипший DNS, NRPT — лечит «без VPN ничего не грузится» |
 | [`display-fxaa-artifacts/`](display-fxaa-artifacts/) | Разгадка «пережатых» приложений: глобальный FXAA NVIDIA мылит Electron/Flutter, а браузеры маскируют проблему |
+| [`display-hotkeys/`](display-hotkeys/) | Win+M+1 / Win+M+2 — мгновенно «только экран компьютера» / «только второй экран», как Win+P; обычный Win+M не ломается |
 
 Папки твиков самодостаточны: README с объяснением «что и почему» +
 идемпотентный скрипт `apply-*-tweaks.ps1` (запускать от администратора).
@@ -44,7 +45,7 @@ Dev-канал Insider при каждом флайте пересобирает
 Всё разом — **`apply-all.ps1`** в корне (от администратора): прогоняет все
 запускаемые паки в разумном порядке, любой можно исключить —
 `.\apply-all.ps1 -Skip debloat,lan`. Гайды и установочные папки
-(bios, stayawake, fancontrol, boot-guard, tweaks-reassert) он сознательно
+(bios, stayawake, fancontrol, boot-guard, tweaks-reassert, display-hotkeys) он сознательно
 не трогает — там свои шаги, см. их README.
 
 ## Драйверы

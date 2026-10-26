@@ -37,6 +37,7 @@ flight.
 | [`tweaks-reassert/`](tweaks-reassert/) | Wrapper watchdog: re-applies system-perf, vpn-dns-doctor and the debloat at every logon + a map of "who guards what" |
 | [`vpn-dns-doctor/`](vpn-dns-doctor/) | Cleans up after VPN clients: orphaned routes, stuck DNS, NRPT — cures "nothing loads without the VPN" |
 | [`display-fxaa-artifacts/`](display-fxaa-artifacts/) | The "over-compressed apps" mystery solved: NVIDIA's global FXAA blurs Electron/Flutter apps, while browsers mask the problem |
+| [`display-hotkeys/`](display-hotkeys/) | Win+M+1 / Win+M+2 — instantly "PC screen only" / "Second screen only", like Win+P; plain Win+M keeps working |
 
 Tweak folders are self-contained: a README explaining the what and why + an
 idempotent `apply-*-tweaks.ps1` script (run it as administrator). (The per-folder
@@ -45,7 +46,7 @@ READMEs are in Russian.)
 To run everything at once, use **`apply-all.ps1`** in the repo root (as administrator):
 it runs all the runnable packs in a sensible order, and any of them can be skipped —
 `.\apply-all.ps1 -Skip debloat,lan`. Guides and install-style folders
-(bios, stayawake, fancontrol, boot-guard, tweaks-reassert) are deliberately left
+(bios, stayawake, fancontrol, boot-guard, tweaks-reassert, display-hotkeys) are deliberately left
 out — they have their own steps, see their READMEs.
 
 ## Drivers
